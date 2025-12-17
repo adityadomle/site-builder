@@ -31,21 +31,17 @@ const Sidebar = ({ sidebar, setSidebar }) => {
 
   return (
     <div
-      className={`w-60 bg-white border-r border-gray-200 flex flex-col justify-between max-sm:absolute top-14 bottom-0 ${
+      className={`w-60 bg-white border-r border-slate-200 flex flex-col justify-between max-sm:absolute top-14 bottom-0 ${
         sidebar ? "translate-x-0" : "max-sm:-translate-x-full"
       } transition-all duration-300 z-10`}
     >
       <div className="my-7 w-full">
-        <img
-          src={user.imageUrl}
-          alt="User avatar"
-          className="w-14 rounded-full mx-auto"
-        />
-        <h1 className="mt-1 text-center text-sm font-medium">
+        <img src={user.imageUrl} className="w-14 rounded-full mx-auto" />
+        <h1 className="mt-1 text-center text-sm font-medium text-slate-800">
           {user.fullName}
         </h1>
 
-        <div className="px-6 mt-5 text-sm text-gray-600 font-medium">
+        <div className="px-6 mt-6 text-sm font-medium text-slate-600">
           {navItems.map(({ to, label, Icon }) => (
             <NavLink
               key={to}
@@ -53,10 +49,10 @@ const Sidebar = ({ sidebar, setSidebar }) => {
               end={to === "/ai"}
               onClick={() => setSidebar(false)}
               className={({ isActive }) =>
-                `px-3.5 py-2.5 flex items-center gap-3 rounded transition ${
+                `px-3.5 py-2.5 flex items-center gap-3 rounded-md transition ${
                   isActive
-                    ? "bg-gradient-to-r from-[#0059ff6b] to-[#2c012c5b] text-white"
-                    : "hover:bg-gray-100"
+                    ? "bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700"
+                    : "hover:bg-slate-100"
                 }`
               }
             >
@@ -67,30 +63,20 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         </div>
       </div>
 
-      <div className="w-full border-t border-gray-200 p-4 px-6 flex items-center justify-between">
-        <div
-          onClick={openUserProfile}
-          className="flex gap-2 items-center cursor-pointer"
-        >
-          <img
-            src={user.imageUrl}
-            alt="User avatar"
-            className="w-8 rounded-full"
-          />
+      <div className="w-full border-t border-slate-200 p-4 px-6 flex items-center justify-between">
+        <div onClick={openUserProfile} className="flex gap-2 items-center cursor-pointer">
+          <img src={user.imageUrl} className="w-8 rounded-full" />
           <div>
-            <h1 className="text-sm font-medium">{user.fullName}</h1>
-            <p className="text-xs text-gray-500">
-              <Protect plan="premium" fallback="Free">
-                Premium
-              </Protect>{" "}
-              Plan
+            <h1 className="text-sm font-medium text-slate-800">{user.fullName}</h1>
+            <p className="text-xs text-slate-500">
+              <Protect plan="premium" fallback="Free">Premium</Protect> Plan
             </p>
           </div>
         </div>
 
         <LogOut
           onClick={() => signOut({ redirectUrl: "/" })}
-          className="w-4 text-gray-400 hover:text-gray-700 cursor-pointer"
+          className="w-4 text-slate-400 hover:text-slate-700 cursor-pointer"
         />
       </div>
     </div>
