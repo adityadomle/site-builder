@@ -8,7 +8,7 @@ const Community = () => {
   const { user } = useUser()
 
   const fetchCreations = async () => {
-    setCreations(dummyPublishedCreationData)
+    setCreations(dummyPublishedCreationData) 
   }
 
   useEffect
