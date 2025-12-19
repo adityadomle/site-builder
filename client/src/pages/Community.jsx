@@ -12,14 +12,24 @@ const Community = () => {
   }
 
 
-  useEffect(()=>{},[])
+  useEffect(()=>{
+    if(user){
+      fetchCreations()
+    }
+  },[user])
+
   return (
-    <div className="flex-1 h-full flex flex-col gap-4 p-6">
-      Creations
-      <div className="bg-white h-full w-full rounded-xl overflow-y-scroll">
+<div className="flex-1 h-full flex flex-col gap-4 p-6">
+  <h2>Creations</h2>
+
+  <div className="bg-white h-full w-full rounded-xl overflow-y-scroll">
+    {creations.map((item, index) => (
+      <div key={index} className="p-4 border-b">
+        {item}
       </div>
-    </div>
+    ))}
+  </div>
+</div>
   )
 }
-
 export default Community
