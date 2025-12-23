@@ -6,6 +6,10 @@ export const generateArticle = async (req, res) => {
         const { prompt, length } = req.body;
         const plan = req.plan;
         const free_usage = req.free_usage
+
+        if(plan !== 'premium' && free_usage >= 10){
+            return res.json({})
+        }
     } catch (error) {
         
     }
