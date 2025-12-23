@@ -5,7 +5,7 @@ export const generateArticle = async (req, res) => {
         const { userId } = req.auth();
         const { prompt, length } = req.body;
         const plan = req.plan;
-        
+        const free_usage = req.free_usage
     } catch (error) {
         
     }
