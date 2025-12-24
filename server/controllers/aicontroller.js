@@ -29,7 +29,10 @@ export const generateArticle = async (req, res) => {
             max_tokens: length,
         });
 
-        await sql
+        await sql` INSERT INTO creations (user_id, prompt, content, type)
+        VALUES (${userId},, ${prompt}, ${content}, 'article)`;
+
+        
 
 
         const content = response.choices[0].message.content;
