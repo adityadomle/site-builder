@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import sql from "../configs/db"
 
 const AI = new OpenAI({
     apiKey: process.env.GEMINI_API_KEY,
@@ -27,6 +28,9 @@ export const generateArticle = async (req, res) => {
             temperature: 0.7,
             max_tokens: length,
         });
+
+        await sql
+
 
         const content = response.choices[0].message.content;
 
