@@ -8,4 +8,4 @@ aiRouter.post("/generate-article", auth, generateArticle);
 aiRouter.post("/generate-blog-title", auth, generateBlogTitle);
 aiRouter.post("/generate-image", auth, generateImage);
 
-export default aiRouter;
+export default aiRouter; 
