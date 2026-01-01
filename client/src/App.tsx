@@ -12,7 +12,7 @@ import Navbar from './components/Navbar.tsx'
 const App = () => {
   return ( 
     <div>
-      <Navbar />
+      <Navbar /> 
       <Routes>
         <Route path='/' element={<Home />} /> 
         <Route path='/pricing' element={<Pricing />} /> 
